@@ -1,86 +1,92 @@
 const Business = require('../models/Business');
+const { createBusinessSchema } = require('../validators/businessValidator');
+const { geocodeAddress } = require('../utils/geocoder');
 
-exports.getBusinesses = async (req, res) => {
+// GET /api/businesses?category=...&neLat=...&neLng=...&swLat=...&swLng=...&limit=50
+exports.getBusinesses = async (req, res, next) => {
   try {
-    const { category, bounds } = req.query;
-    const query = { isActive: true };
-
-    if (category) {
-      query.category = category;
-    }
-
-    if (bounds) {
-      const [swLng, swLat, neLng, neLat] = bounds.split(',').map(Number);
-      query.location = {
-        $geoWithin: {
-          $box: [
-            [swLng, swLat],
-            [neLng, neLat],
-          ],
-        },
+    const { category, neLat, neLng, swLat, swLng, limit = 50 } = req.query;
+    const filter = { isActive: true };
+    
+    if (category) filter.category = category;
+    
+    if (neLat && neLng && swLat && swLng) {
+      filter.location = { 
+        $geoWithin: { 
+          $box: [[Number(swLng), Number(swLat)], [Number(neLng), Number(neLat)]] 
+        } 
       };
     }
-
-    const businesses = await Business.find(query)
-      .populate('owner', 'displayName email')
-      .sort({ createdAt: -1 });
-
+    
+    const businesses = await Business.find(filter)
+      .select('-__v')
+      .limit(Math.min(Number(limit), 100))
+      .lean();
+    
     res.json({ businesses });
-  } catch (error) {
-    console.error('Error fetching businesses:', error);
-    res.status(500).json({ error: 'Failed to fetch businesses' });
+  } catch (err) { 
+    next(err); 
   }
 };
 
-exports.createBusiness = async (req, res) => {
+// GET /api/businesses/:id
+exports.getBusinessById = async (req, res, next) => {
   try {
-    const { name, description, category, address, location, contact } = req.body;
-
-    if (!name || !description || !category || !location) {
-      return res.status(400).json({
-        error: 'Name, description, category, and location are required',
-      });
-    }
-
-    if (!location.coordinates || location.coordinates.length !== 2) {
-      return res.status(400).json({
-        error: 'Location coordinates must be [longitude, latitude]',
-      });
-    }
-
-    const business = await Business.create({
-      name,
-      description,
-      category,
-      address,
-      location,
-      contact,
-      owner: req.user._id,
-    });
-
-    await business.populate('owner', 'displayName email');
-
-    res.status(201).json({ business });
-  } catch (error) {
-    console.error('Error creating business:', error);
-    res.status(500).json({ error: 'Failed to create business' });
-  }
-};
-
-exports.getBusinessById = async (req, res) => {
-  try {
-    const { id } = req.params;
-
-    const business = await Business.findById(id)
-      .populate('owner', 'displayName email photoURL');
-
-    if (!business) {
-      return res.status(404).json({ error: 'Business not found' });
-    }
-
+    const business = await Business.findById(req.params.id)
+      .where({ isActive: true })
+      .select('-__v')
+      .lean();
+    
+    if (!business) return res.status(404).json({ error: 'Business not found' });
+    
     res.json({ business });
-  } catch (error) {
-    console.error('Error fetching business:', error);
-    res.status(500).json({ error: 'Failed to fetch business' });
+  } catch (err) { 
+    next(err); 
+  }
+};
+
+// POST /api/businesses
+exports.createBusiness = async (req, res, next) => {
+  try {
+    if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+    
+    const { value, error } = createBusinessSchema.validate(req.body, { abortEarly: false });
+    if (error) {
+      return res.status(400).json({ 
+        error: 'Validation failed', 
+        details: error.details.map(d => d.message) 
+      });
+    }
+    
+    let coordinates = null;
+    
+    // Try geocoding address first
+    const geocoded = await geocodeAddress(value.address);
+    if (geocoded) coordinates = [geocoded.lng, geocoded.lat];
+    
+    // Fall back to manual lat/lng if provided
+    if (!coordinates && value.latitude != null && value.longitude != null) {
+      coordinates = [Number(value.longitude), Number(value.latitude)];
+    }
+    
+    if (!coordinates) {
+      return res.status(400).json({ 
+        error: 'Provide a valid address or latitude/longitude.' 
+      });
+    }
+    
+    const doc = await Business.create({
+      name: value.name,
+      description: value.description,
+      category: value.category,
+      owner: req.user._id,
+      address: value.address,
+      location: { type: 'Point', coordinates },
+      contact: value.contact,
+    });
+    
+    res.status(201).json({ business: doc });
+  } catch (err) { 
+    next(err); 
   }
 };

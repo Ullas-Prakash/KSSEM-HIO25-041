@@ -66,7 +66,15 @@ const Businesses = () => {
     }
 
     try {
-      const response = await api.post('/api/businesses', formData);
+      // Convert coordinates to latitude/longitude for backend
+      const businessData = {
+        ...formData,
+        latitude: formData.location.coordinates[1],
+        longitude: formData.location.coordinates[0],
+      };
+      delete businessData.location; // Remove location object
+      
+      const response = await api.post('/api/businesses', businessData);
       setBusinesses([...businesses, response.data.business]);
       setFormData({
         name: '',

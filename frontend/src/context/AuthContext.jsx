@@ -22,27 +22,48 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const signup = (email, password) => {
+    if (!auth) {
+      throw new Error('Firebase not configured. Please set up Firebase credentials.');
+    }
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const login = (email, password) => {
+    if (!auth) {
+      throw new Error('Firebase not configured. Please set up Firebase credentials.');
+    }
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const loginWithGoogle = async () => {
+    if (!auth) {
+      throw new Error('Firebase not configured. Please set up Firebase credentials.');
+    }
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
   };
 
   const loginAnonymously = () => {
+    if (!auth) {
+      throw new Error('Firebase not configured. Please set up Firebase credentials.');
+    }
     return signInAnonymously(auth);
   };
 
   const logout = () => {
+    if (!auth) {
+      throw new Error('Firebase not configured. Please set up Firebase credentials.');
+    }
     return signOut(auth);
   };
 
   useEffect(() => {
+    if (!auth) {
+      // Firebase not configured, skip auth state listener
+      setLoading(false);
+      return;
+    }
+
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         try {

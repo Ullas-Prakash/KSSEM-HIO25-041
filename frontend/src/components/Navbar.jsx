@@ -35,6 +35,9 @@ const Navbar = () => {
             <Link to="/businesses" className="hover:text-secondary transition">
               Businesses
             </Link>
+            <Link to="/schemes" className="hover:text-secondary transition">
+              Schemes
+            </Link>
             {currentUser?.dbUser?.isAdmin && (
               <Link to="/admin" className="hover:text-secondary transition">
                 Admin
@@ -114,6 +117,13 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Businesses
+            </Link>
+            <Link
+              to="/schemes"
+              className="block py-2 hover:text-secondary transition"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Schemes
             </Link>
             {currentUser?.dbUser?.isAdmin && (
               <Link

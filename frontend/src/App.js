@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Stories from './pages/Stories';
 import Businesses from './pages/Businesses';
+import Schemes from './pages/Schemes';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminPanel from './pages/AdminPanel';
@@ -35,6 +36,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/stories" element={<Stories />} />
               <Route path="/businesses" element={<Businesses />} />
+              <Route path="/schemes" element={<Schemes />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route

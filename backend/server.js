@@ -7,6 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const storyRoutes = require('./routes/storyRoutes');
 const businessRoutes = require('./routes/businessRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const schemeRoutes = require('./routes/schemeRoutes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/stories', storyRoutes);
 app.use('/api/businesses', businessRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/schemes', schemeRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -49,3 +51,22 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
 });
+
+/*
+ * DEVELOPER NOTES:
+ * 
+ * For local testing before Firebase is fully integrated:
+ * - Send header: x-user-id: <valid MongoDB ObjectId of a User>
+ * - This bypasses Firebase auth in development mode
+ * 
+ * When Firebase Admin middleware is ready:
+ * - The authMiddleware will automatically use Firebase token verification
+ * - Remove the x-user-id development bypass from authMiddleware.js
+ * 
+ * Business Hub Features:
+ * - Geocoding: Set GEOCODER_PROVIDER=google and GEOCODER_API_KEY in .env
+ * - Manual coordinates: Send latitude/longitude in POST request
+ * - Map bounds filtering: Use neLat, neLng, swLat, swLng query params
+ * 
+ * See backend/TESTS.md for complete API testing examples
+ */
