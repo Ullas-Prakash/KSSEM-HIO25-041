@@ -1,0 +1,17 @@
+{
+  "name": "connecther-platform",
+  "version": "1.0.0",
+  "description": "ConnectHer - Empower, Inspire, Grow",
+  "scripts": {
+    "install-all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm start\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start"
+  },
+  "keywords": ["connecther", "women", "empowerment", "hackathon"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  }
+}
