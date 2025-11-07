@@ -48,7 +48,7 @@ const importSchemes = async () => {
   try {
     await connectDB();
     
-    const jsonPath = path.join(__dirname, 'schemesData.json');
+    const jsonPath = path.join(__dirname, 'comprehensiveSchemesData.json');
     const schemes = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'));
     
     // Clear existing schemes

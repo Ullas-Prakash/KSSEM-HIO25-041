@@ -1,0 +1,340 @@
+[
+  {
+    "name": "Beti Bachao Beti Padhao",
+    "short_description": "National initiative to promote girl child welfare",
+    "benefits": "Awareness campaigns and incentives for girl education",
+    "eligibility_summary": "All families with girl children",
+    "category": "Girl Child",
+    "scheme_type": "Grant",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Women and Child Development",
+    "implementing_agency": "District Administration",
+    "official_url": "https://wcd.nic.in/bbbp-scheme",
+    "application_mode": "Both",
+    "application_portal_url": "https://wcd.nic.in/bbbp-scheme",
+    "financial_assistance": {
+      "amount": "Varies by component",
+      "frequency": "As per need"
+    },
+    "eligibility_criteria": {
+      "gender": "Female",
+      "age_max": 18
+    },
+    "status": "Active"
+  },
+  {
+    "name": "PM Kisan Samman Nidhi",
+    "short_description": "Income support for farmer families",
+    "benefits": "₹6000/year in 3 installments",
+    "eligibility_summary": "Small and marginal farmers including women",
+    "category": "Women Farmers",
+    "scheme_type": "Direct Benefit Transfer",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Agriculture",
+    "implementing_agency": "Department of Agriculture",
+    "official_url": "https://pmkisan.gov.in",
+    "application_mode": "Online",
+    "application_portal_url": "https://pmkisan.gov.in",
+    "financial_assistance": {
+      "amount": "₹6000",
+      "frequency": "Yearly",
+      "max_amount": "₹6000"
+    },
+    "eligibility_criteria": {
+      "occupation": ["Farmer"],
+      "land_holding": "Small and marginal farmers"
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Sukanya Samriddhi Yojana",
+    "short_description": "Girl child savings plan",
+    "benefits": "High interest savings scheme with tax benefits",
+    "eligibility_summary": "Parents/guardians of girl child under 10 years",
+    "category": "Girl Child",
+    "scheme_type": "Grant",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Finance",
+    "implementing_agency": "Post Office and Banks",
+    "official_url": "https://www.nsiindia.gov.in",
+    "application_mode": "Offline",
+    "application_portal_url": "https://www.nsiindia.gov.in",
+    "eligibility_criteria": {
+      "gender": "Female",
+      "age_max": 10
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Pradhan Mantri Matru Vandana Yojana",
+    "short_description": "Maternity benefit scheme",
+    "benefits": "₹5000 cash incentive for first living child",
+    "eligibility_summary": "Pregnant and lactating mothers",
+    "category": "Health",
+    "scheme_type": "Direct Benefit Transfer",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Women and Child Development",
+    "implementing_agency": "Anganwadi Centers",
+    "official_url": "https://wcd.nic.in/schemes/pradhan-mantri-matru-vandana-yojana",
+    "application_mode": "Both",
+    "application_portal_url": "https://pmmvy-cas.nic.in",
+    "financial_assistance": {
+      "amount": "₹5000",
+      "frequency": "One-time"
+    },
+    "eligibility_criteria": {
+      "gender": "Female",
+      "age_min": 19
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Indira Gandhi National Widow Pension Scheme",
+    "short_description": "Pension support for widows",
+    "benefits": "₹300-500 per month based on age",
+    "eligibility_summary": "Widows aged 40-59 years below poverty line",
+    "category": "Widows",
+    "scheme_type": "Pension",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Rural Development",
+    "implementing_agency": "State Social Welfare Department",
+    "official_url": "https://nsap.nic.in",
+    "application_mode": "Offline",
+    "application_portal_url": "https://nsap.nic.in",
+    "financial_assistance": {
+      "amount": "₹300-500",
+      "frequency": "Monthly"
+    },
+    "eligibility_criteria": {
+      "gender": "Female",
+      "age_min": 40,
+      "age_max": 59,
+      "marital_status": ["Widow"],
+      "bpl_card_required": true
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Stand Up India Scheme",
+    "short_description": "Bank loans for SC/ST and women entrepreneurs",
+    "benefits": "Loans between ₹10 lakh to ₹1 crore for setting up greenfield enterprises",
+    "eligibility_summary": "SC/ST and women entrepreneurs for new enterprises",
+    "category": "Entrepreneurship",
+    "scheme_type": "Loan",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Finance",
+    "implementing_agency": "Banks",
+    "official_url": "https://www.standupmitra.in",
+    "application_mode": "Online",
+    "application_portal_url": "https://www.standupmitra.in",
+    "financial_assistance": {
+      "amount": "₹10 lakh to ₹1 crore",
+      "frequency": "One-time"
+    },
+    "eligibility_criteria": {
+      "age_min": 18,
+      "caste_category": ["SC", "ST", "Women"]
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Pradhan Mantri Mudra Yojana",
+    "short_description": "Micro-finance scheme for small businesses",
+    "benefits": "Loans up to ₹10 lakh for micro-enterprises",
+    "eligibility_summary": "Women entrepreneurs and small business owners",
+    "category": "Entrepreneurship",
+    "scheme_type": "Loan",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Finance",
+    "implementing_agency": "Banks and NBFCs",
+    "official_url": "https://www.mudra.org.in",
+    "application_mode": "Both",
+    "application_portal_url": "https://www.mudra.org.in",
+    "financial_assistance": {
+      "amount": "Up to ₹10 lakh",
+      "frequency": "One-time"
+    },
+    "eligibility_criteria": {
+      "age_min": 18,
+      "occupation": ["Entrepreneur", "Business Owner"]
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Pradhan Mantri Awas Yojana - Gramin",
+    "short_description": "Housing for rural poor",
+    "benefits": "Financial assistance for construction of pucca house",
+    "eligibility_summary": "Rural families without pucca house, priority to women-headed households",
+    "category": "Housing",
+    "scheme_type": "Subsidy",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Rural Development",
+    "implementing_agency": "State Rural Development Department",
+    "official_url": "https://pmayg.nic.in",
+    "application_mode": "Both",
+    "application_portal_url": "https://pmayg.nic.in",
+    "financial_assistance": {
+      "amount": "₹1.2 lakh to ₹1.3 lakh",
+      "frequency": "One-time"
+    },
+    "eligibility_criteria": {
+      "income_limit": "Below Poverty Line"
+    },
+    "status": "Active"
+  },
+  {
+    "name": "National Rural Livelihood Mission (DAY-NRLM)",
+    "short_description": "Skill development and livelihood for rural women",
+    "benefits": "Training, credit linkage, and support for Self Help Groups",
+    "eligibility_summary": "Rural women in poverty",
+    "category": "Skill Development",
+    "scheme_type": "Training",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Rural Development",
+    "implementing_agency": "State Rural Livelihood Mission",
+    "official_url": "https://nrlm.gov.in",
+    "application_mode": "Both",
+    "application_portal_url": "https://nrlm.gov.in",
+    "eligibility_criteria": {
+      "gender": "Female",
+      "income_limit": "Below Poverty Line"
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Ayushman Bharat - PMJAY",
+    "short_description": "Health insurance for poor families",
+    "benefits": "₹5 lakh health cover per family per year",
+    "eligibility_summary": "Families identified under SECC 2011",
+    "category": "Health",
+    "scheme_type": "Insurance",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Health and Family Welfare",
+    "implementing_agency": "National Health Authority",
+    "official_url": "https://pmjay.gov.in",
+    "application_mode": "Online",
+    "application_portal_url": "https://pmjay.gov.in",
+    "financial_assistance": {
+      "amount": "₹5 lakh health cover",
+      "frequency": "Yearly"
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Pradhan Mantri Ujjwala Yojana",
+    "short_description": "Free LPG connection to BPL households",
+    "benefits": "Free gas connection and subsidy on refills",
+    "eligibility_summary": "Women from BPL families",
+    "category": "Rural Women",
+    "scheme_type": "Subsidy",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Petroleum and Natural Gas",
+    "implementing_agency": "Oil Marketing Companies",
+    "official_url": "https://www.pmujjwalayojana.com",
+    "application_mode": "Both",
+    "application_portal_url": "https://www.pmujjwalayojana.com",
+    "eligibility_criteria": {
+      "gender": "Female",
+      "bpl_card_required": true
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Pradhan Mantri Kaushal Vikas Yojana",
+    "short_description": "Skill development and training program",
+    "benefits": "Free skill training with certification and placement assistance",
+    "eligibility_summary": "Youth including women seeking employment",
+    "category": "Skill Development",
+    "scheme_type": "Training",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Skill Development and Entrepreneurship",
+    "implementing_agency": "National Skill Development Corporation",
+    "official_url": "https://www.pmkvyofficial.org",
+    "application_mode": "Online",
+    "application_portal_url": "https://www.pmkvyofficial.org",
+    "eligibility_criteria": {
+      "age_min": 15,
+      "age_max": 45
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Mahila Shakti Kendra",
+    "short_description": "Women empowerment at community level",
+    "benefits": "Skill development, employment linkages, and awareness programs",
+    "eligibility_summary": "Rural and urban women",
+    "category": "Employment",
+    "scheme_type": "Training",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Women and Child Development",
+    "implementing_agency": "District Administration",
+    "official_url": "https://wcd.nic.in/schemes/mahila-shakti-kendra",
+    "application_mode": "Both",
+    "application_portal_url": "https://wcd.nic.in",
+    "eligibility_criteria": {
+      "gender": "Female"
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Indira Gandhi National Old Age Pension",
+    "short_description": "Pension for senior citizens",
+    "benefits": "₹200-500 per month based on age",
+    "eligibility_summary": "Senior citizens aged 60+ below poverty line",
+    "category": "Senior Women",
+    "scheme_type": "Pension",
+    "level": "Central",
+    "state_ut": "All States",
+    "ministry_department": "Ministry of Rural Development",
+    "implementing_agency": "State Social Welfare Department",
+    "official_url": "https://nsap.nic.in",
+    "application_mode": "Offline",
+    "application_portal_url": "https://nsap.nic.in",
+    "financial_assistance": {
+      "amount": "₹200-500",
+      "frequency": "Monthly"
+    },
+    "eligibility_criteria": {
+      "age_min": 60,
+      "bpl_card_required": true
+    },
+    "status": "Active"
+  },
+  {
+    "name": "Kanya Sumangala Yojana",
+    "short_description": "Financial assistance for girl child in Uttar Pradesh",
+    "benefits": "₹15000 in installments from birth to graduation",
+    "eligibility_summary": "Girls born in families with annual income below ₹3 lakh",
+    "category": "Girl Child",
+    "scheme_type": "Grant",
+    "level": "State",
+    "state_ut": "Uttar Pradesh",
+    "ministry_department": "Women and Child Development Department",
+    "implementing_agency": "District Probation Officer",
+    "official_url": "https://mahilakalyan.up.nic.in",
+    "application_mode": "Online",
+    "application_portal_url": "https://mksy.up.gov.in",
+    "financial_assistance": {
+      "amount": "₹15000",
+      "frequency": "As per milestones"
+    },
+    "eligibility_criteria": {
+      "gender": "Female",
+      "income_limit": "Below ₹3 lakh annually"
+    },
+    "status": "Active"
+  }
+]
