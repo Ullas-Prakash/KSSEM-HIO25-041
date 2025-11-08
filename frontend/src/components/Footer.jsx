@@ -24,6 +24,11 @@ const Footer = () => {
                   Businesses
                 </a>
               </li>
+              <li>
+                <a href="/schemes" className="hover:text-white transition">
+                  Schemes
+                </a>
+              </li>
             </ul>
           </div>
           <div>

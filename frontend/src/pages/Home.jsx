@@ -112,13 +112,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6">
-            Join Our Community
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Be part of a supportive network of women empowering each other through shared
-            experiences and entrepreneurship.
-          </p>
+          
           {!currentUser ? (
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -137,19 +131,26 @@ const Home = () => {
           ) : (
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to="/stories"
+                to="/Schemes"
                 className="bg-primary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-opacity-90 transition"
               >
-                Share Your Story
+                Scheme description
               </Link>
               <Link
-                to="/businesses"
+                to="/JobSearch"
                 className="bg-secondary text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-opacity-90 transition"
               >
-                Register Your Business
+                Job opportunitioes
               </Link>
             </div>
           )}
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">
+            
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            Explore all the available schemes here and their details<br/>
+            Raeach out for jobs, specific to your skills and interests
+          </p>
         </div>
       </section>
 

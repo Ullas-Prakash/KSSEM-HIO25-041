@@ -38,6 +38,11 @@ const Navbar = () => {
             <Link to="/schemes" className="hover:text-secondary transition">
               Schemes
             </Link>
+            {currentUser && (
+              <Link to="/job-platform" className="hover:text-secondary transition">
+                Jobs
+              </Link>
+            )}
             {currentUser?.dbUser?.isAdmin && (
               <Link to="/admin" className="hover:text-secondary transition">
                 Admin
@@ -125,6 +130,15 @@ const Navbar = () => {
             >
               Schemes
             </Link>
+            {currentUser && (
+              <Link
+                to="/job-platform"
+                className="block py-2 hover:text-secondary transition"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Jobs
+              </Link>
+            )}
             {currentUser?.dbUser?.isAdmin && (
               <Link
                 to="/admin"

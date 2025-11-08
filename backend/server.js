@@ -8,6 +8,12 @@ const storyRoutes = require('./routes/storyRoutes');
 const businessRoutes = require('./routes/businessRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const schemeRoutes = require('./routes/schemeRoutes');
+const candidateRoutes = require('./routes/candidateRoutes');
+const employerRoutes = require('./routes/employerRoutes');
+const jobRoutes = require('./routes/jobRoutes');
+const applicationRoutes = require('./routes/applicationRoutes');
+const invitationRoutes = require('./routes/invitationRoutes');
+const notificationRoutes = require('./routes/notificationRoutes');
 
 const app = express();
 
@@ -25,6 +31,12 @@ app.use('/api/stories', storyRoutes);
 app.use('/api/businesses', businessRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/schemes', schemeRoutes);
+app.use('/api/candidates', candidateRoutes);
+app.use('/api/employers', employerRoutes);
+app.use('/api/jobs', jobRoutes);
+app.use('/api/applications', applicationRoutes);
+app.use('/api/invitations', invitationRoutes);
+app.use('/api/notifications', notificationRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

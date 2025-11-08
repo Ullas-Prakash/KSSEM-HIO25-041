@@ -10,6 +10,10 @@ import Schemes from './pages/Schemes';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AdminPanel from './pages/AdminPanel';
+import CandidateProfile from './pages/CandidateProfile';
+import EmployerProfile from './pages/EmployerProfile';
+import JobPlatform from './pages/JobPlatform';
+import PostJob from './pages/PostJob';
 
 const ProtectedRoute = ({ children, adminOnly = false }) => {
   const { currentUser } = useAuth();
@@ -44,6 +48,38 @@ function App() {
                 element={
                   <ProtectedRoute adminOnly={true}>
                     <AdminPanel />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/job-platform"
+                element={
+                  <ProtectedRoute>
+                    <JobPlatform />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/candidate-profile"
+                element={
+                  <ProtectedRoute>
+                    <CandidateProfile />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/employer-profile"
+                element={
+                  <ProtectedRoute>
+                    <EmployerProfile />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/post-job"
+                element={
+                  <ProtectedRoute>
+                    <PostJob />
                   </ProtectedRoute>
                 }
               />

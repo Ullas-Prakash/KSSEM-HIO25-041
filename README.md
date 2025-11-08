@@ -1,9 +1,10 @@
 # ConnectHer - Empower | Inspire | Grow
 
-A digital platform empowering women through storytelling and entrepreneurship. ConnectHer provides two main features:
+A comprehensive digital platform empowering women through storytelling, entrepreneurship, and employment opportunities. ConnectHer provides three main features:
 
 - **Story Hub**: Share and discover inspiring stories across categories like Career, Health, Education, and Growth
 - **Business Hub**: A map-based directory to discover and register women-led businesses
+- **Job Platform**: Connect women seeking employment with verified employers through intelligent matching
 
 ## 🚀 Tech Stack
 
@@ -20,6 +21,8 @@ A digital platform empowering women through storytelling and entrepreneurship. C
 - Express.js
 - MongoDB Atlas (Mongoose)
 - Firebase Admin SDK
+- Firebase Storage
+- Multer (file uploads)
 - CORS
 
 ## 📋 Prerequisites
@@ -227,11 +230,39 @@ hackio/
 - Anonymous browsing
 - Protected routes for authenticated users
 
+### Job Platform (NEW!)
+- **For Candidates:**
+  - Create professional profiles with skills and experience
+  - Upload resumes (PDF/DOCX)
+  - Get intelligent job matches based on skills, education, and location
+  - Apply for jobs with cover letters
+  - Receive and respond to employer invitations
+  - Track application status
+  
+- **For Employers:**
+  - Create company profiles with verification
+  - Post detailed job openings
+  - Search and filter candidates
+  - Get matched candidates for each job
+  - Send invitations to promising candidates
+  - Manage applications and update statuses
+  
+- **Intelligent Matching:**
+  - 50% skills match (Jaccard similarity)
+  - 30% education compatibility
+  - 20% location proximity
+  - Automatic match suggestions for both sides
+
 ### Admin Panel
 - View all stories and businesses
 - Soft delete content (marks as inactive)
 - Platform statistics dashboard
 - User engagement metrics
+- **Job Platform Moderation:**
+  - Approve/reject employer verifications
+  - Monitor job postings
+  - Manage candidate accounts
+  - View job platform statistics
 
 ## 🔒 Security Features
 
@@ -289,12 +320,47 @@ firebase deploy
 - `POST /api/businesses` - Register business (auth required)
 - `GET /api/businesses/:id` - Get business details
 
+### Job Platform
+- **Candidates:**
+  - `POST /api/candidates/profile` - Create/update profile
+  - `POST /api/candidates/resume` - Upload resume
+  - `GET /api/candidates/matches` - Get matched jobs
+  - `GET /api/candidates/applications` - Get applications
+  - `GET /api/candidates/invitations` - Get invitations
+
+- **Employers:**
+  - `POST /api/employers/profile` - Create/update profile
+  - `POST /api/employers/verify` - Submit verification
+  - `POST /api/jobs` - Create job (verified only)
+  - `GET /api/jobs/:id/matches` - Get matched candidates
+  - `POST /api/jobs/:id/invite` - Invite candidate
+
+- **Applications:**
+  - `POST /api/applications` - Apply for job
+  - `PUT /api/applications/:id/status` - Update status
+
+- **Invitations:**
+  - `PUT /api/invitations/:id/accept` - Accept invitation
+  - `PUT /api/invitations/:id/decline` - Decline invitation
+
+- **Notifications:**
+  - `GET /api/notifications` - Get notifications
+  - `PUT /api/notifications/:id/read` - Mark as read
+
+**📖 Full API Documentation:** See [JOB_PLATFORM_API.md](backend/JOB_PLATFORM_API.md)
+
 ### Admin (Admin auth required)
 - `GET /api/admin/stories` - Get all stories
 - `DELETE /api/admin/stories/:id` - Soft delete story
 - `GET /api/admin/businesses` - Get all businesses
 - `DELETE /api/admin/businesses/:id` - Soft delete business
 - `GET /api/admin/stats` - Get platform statistics
+- **Job Platform:**
+  - `GET /api/admin/employers/pending` - Get pending verifications
+  - `PUT /api/admin/employers/:id/verify` - Approve employer
+  - `GET /api/admin/jobs` - Get all jobs
+  - `GET /api/admin/candidates` - Get all candidates
+  - `GET /api/admin/stats/jobs` - Get job platform stats
 
 ## 🐛 Troubleshooting
 

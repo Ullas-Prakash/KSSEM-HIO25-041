@@ -23,7 +23,9 @@
     "firebase-admin": "^11.11.0",
     "joi": "^17.11.0",
     "mongoose": "^7.6.3",
-    "node-geocoder": "^4.3.0"
+    "multer": "^2.0.2",
+    "node-geocoder": "^4.3.0",
+    "uuid": "^13.0.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
