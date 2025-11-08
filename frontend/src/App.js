@@ -14,6 +14,8 @@ import CandidateProfile from './pages/CandidateProfile';
 import EmployerProfile from './pages/EmployerProfile';
 import JobPlatform from './pages/JobPlatform';
 import PostJob from './pages/PostJob';
+import JobSearch from './pages/JobSearch';
+import BrowseCandidates from './pages/BrowseCandidates';
 
 const ProtectedRoute = ({ children, adminOnly = false }) => {
   const { currentUser } = useAuth();
@@ -80,6 +82,22 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <PostJob />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/job-search"
+                element={
+                  <ProtectedRoute>
+                    <JobSearch />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/browse-candidates"
+                element={
+                  <ProtectedRoute>
+                    <BrowseCandidates />
                   </ProtectedRoute>
                 }
               />
